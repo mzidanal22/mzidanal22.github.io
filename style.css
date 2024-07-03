@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.navbar nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar nav ul li{
+    list-style: none;
+}
+
+.navbar nav ul li a{
+    text-decoration: none;
+    font-weight: 500;
+    color: gray;
+    padding: 6px 20px;
+    margin: 0 5px;
+    border-radius: 999px;
+}
+
+.navbar nav ul li a:hover{
+    background-color: lightgreen;
+    color: white;
+    transition: 0.5s;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    padding: 70px 40px;
+}
+
+.container .headline {
+    max-width: 500px;
+}
+
+.container .headline .role{
+    font-weight: 600;
+    color: gray
+}
+
+.container .headline h1{
+    font-size: 48px;
+}
+
+.container .profile {
+    margin: 0 50px;
+    margin-left: 100px;
+}
+
+.container .headline .ket{
+    margin-bottom: 20px;
+}
+
+.first-btn{
+    padding: 10px 20px;
+    background-color: rgb(0, 202, 78);
+    border-radius: 999px;
+    color: white;
+    text-decoration: none;
+}
+
+.first-btn:hover{
+    background-color: white;
+    border: 1px solid rgb(0, 202, 78);
+    color: rgb(0, 202, 78);
+    transition: 0.5s;
+}
+
+.experience{
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 202, 78);
+    padding: 50px;
+}
+
+.experience .left-text {
+    color: white;
+    align-items: center;
+}
+
+.experience .left-text h2{
+    font-size: 52px;
+    margin-right: 100px;
+}
+
+.experience .left-text p{
+    font-size: 16px;
+}
+
+.experience h3{
+    color: rgb(0, 202, 78);
+    font-size: 36px;
+}
+
+.experience p{
+    font-size: 14px;
+}
+
+.experience .first-left .years{
+    max-width: 250px;
+    min-height: 200px;
+    text-align: center;
+    background-color: white;
+    margin: 20px;
+    text-wrap: wrap;
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.experience .first-left .project{
+    max-width: 250px;
+    min-height: 200px;
+    text-align: center;
+    background-color: white;
+    margin: 20px;
+    text-wrap: wrap;
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.experience .second-right .client{
+    max-width: 250px;
+    min-height: 200px;
+    text-align: center;
+    background-color: white;
+    margin: 20px;
+    text-wrap: wrap;
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+}
+/* Ini untuk pengaturan Mobile*/
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: black;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .headline{
+        color: white;
+        text-align: center;
+    }
+    .container .profile img{
+        visibility: collapse;
+    }
+
+    .first-btn{
+        background-color: white;
+        color: black;
+        font-weight: 600;
+    }
+
+    .first-btn:hover{
+        background-color: black;
+        border: 1px solid rgb(0, 202, 78);
+        color: rgb(0, 202, 78);
+    }
+  }
