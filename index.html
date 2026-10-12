@@ -1,60 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Zidane | Product Manager</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zidan — Desainer Grafis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbfbf9; --ink:#15151a; --muted:#5d5d66; --line:#d9d9d4;
+  --c:#00a3e0; --m:#e6007e; --y:#ffd500; --card:#ffffff;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#121216;--ink:#f4f4f0;--muted:#a1a1aa;--line:#2c2c33;--card:#1a1a20}
+}
+:root[data-theme="dark"]{--paper:#121216;--ink:#f4f4f0;--muted:#a1a1aa;--line:#2c2c33;--card:#1a1a20}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Instrument Sans",system-ui,sans-serif;font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;margin:0;line-height:1.02;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--m);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+nav b{font-family:"Bricolage Grotesque",sans-serif;font-size:20px}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* hero: misregistered print */
+.hero{padding:clamp(40px,9vw,110px) 0 clamp(48px,8vw,90px);position:relative}
+.name{font-weight:800;font-size:clamp(76px,22vw,240px);position:relative;display:inline-block;color:var(--ink);letter-spacing:-.045em;line-height:.9}
+.name span{position:absolute;left:0;top:0;mix-blend-mode:multiply;pointer-events:none;animation:settle 1.4s cubic-bezier(.2,.8,.2,1) both}
+.name .lc{color:var(--c);transform:translate(calc(-.035em - var(--px,0)*.06em),calc(.02em - var(--py,0)*.05em))}
+.name .lm{color:var(--m);transform:translate(calc(.035em + var(--px,0)*.06em),calc(-.015em + var(--py,0)*.05em))}
+.name .ly{color:var(--y);transform:translate(calc(.012em + var(--py,0)*.05em),calc(.04em - var(--px,0)*.04em))}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .name span{mix-blend-mode:screen}}
+:root[data-theme="dark"] .name span{mix-blend-mode:screen}
+@keyframes settle{from{transform:translate(0,0)}}
+@media (prefers-reduced-motion:reduce){.name span{animation:none}}
+.name .base{position:relative}
+.tag{max-width:30ch;font-size:clamp(20px,2.6vw,28px);line-height:1.3;margin:28px 0 30px;font-family:"Bricolage Grotesque",sans-serif;font-weight:500}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:500;border:2px solid var(--ink)}
+.btn.fill{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--m);border-color:var(--m);color:#fff}
+
+section{padding:clamp(48px,8vw,96px) 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(34px,5vw,56px);margin-bottom:36px;font-weight:800}
+
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.services div{border-left:6px solid var(--c);padding-left:16px}
+.services div:nth-child(2){border-color:var(--m)}
+.services div:nth-child(3){border-color:var(--y)}
+.services div:nth-child(4){border-color:var(--ink)}
+.services h3{font-size:22px;margin-bottom:8px}
+.services p{margin:0;color:var(--muted);font-size:16px}
+
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.ph{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:rgba(0,0,0,.55);font-size:14px;text-align:center;padding:16px}
+.tile:nth-child(1) .ph{background:var(--c)}
+.tile:nth-child(2) .ph{background:var(--y)}
+.tile:nth-child(3) .ph{background:var(--m);color:rgba(255,255,255,.85)}
+.tile:nth-child(4) .ph{background:var(--ink);color:rgba(255,255,255,.7)}
+.tile:nth-child(5) .ph{background:var(--y)}
+.tile:nth-child(6) .ph{background:var(--c)}
+.tile figcaption{padding:14px 16px}
+.tile figcaption b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:19px}
+.tile figcaption small{color:var(--muted);font-size:14px}
+.tile{margin:0}
+
+.about{display:grid;grid-template-columns:1fr;gap:20px;max-width:64ch}
+.about p{margin:0}
+
+.contact h2{font-size:clamp(40px,7vw,84px)}
+.links{display:flex;flex-wrap:wrap;gap:12px}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.bar{position:fixed;left:0;top:0;height:4px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--c),var(--m),var(--y));z-index:50}
+nav ul{align-items:center}
+#theme{background:none;border:2px solid var(--line);color:var(--ink);border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:16px}
+#theme:hover{border-color:var(--m)}
+.name{cursor:pointer;user-select:none}
+.name span{transition:transform .25s ease-out}
+.name.lock span{transform:none!important}
+.hint{color:var(--muted);font-size:14px;margin:0 0 18px}
+.marquee{overflow:hidden;border-top:1px solid var(--line);padding:18px 0;white-space:nowrap}
+.mq{display:flex;width:max-content;animation:mq 30s linear infinite}
+.marquee:hover .mq{animation-play-state:paused}
+.g{display:flex;flex:none}
+.g span{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(28px,5vw,56px);padding-right:.7em;letter-spacing:-.02em}
+.g i{display:inline-block;width:.4em;height:.4em;border-radius:50%;margin-right:.5em;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.services div{transition:border-left-width .2s,padding-left .2s}
+.services div:hover{border-left-width:14px;padding-left:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:-12px 0 28px}
+.chip{font:inherit;font-size:14px;padding:8px 16px;border-radius:999px;border:2px solid var(--ink);background:none;color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.tile{cursor:pointer;transition:transform .15s ease-out,box-shadow .2s}
+.tile:hover{box-shadow:0 14px 30px rgba(0,0,0,.18)}
+.tile.off{display:none}
+.pop{animation:pop .4s both}
+@keyframes pop{from{opacity:0;transform:scale(.92)}}
+dialog{border:0;padding:0;border-radius:10px;max-width:min(720px,92vw);width:100%;background:var(--card);color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+dialog[open]{animation:pop .3s both}
+dialog .ph{aspect-ratio:16/10;font-size:16px}
+.dlg-t{display:flex;align-items:center;gap:12px;padding:16px 20px;flex-wrap:wrap}
+.dlg-t b{font-family:"Bricolage Grotesque",sans-serif;font-size:22px}
+.dlg-t small{color:var(--muted);flex:1}
+.dlg-t .btn{padding:8px 18px;font:inherit;background:none;color:var(--ink);cursor:pointer}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:999px;opacity:0;transition:.3s;pointer-events:none;font-size:15px;z-index:60}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.mq,.pop,dialog[open]{animation:none}.name span{transition:none}}
+</style>
 </head>
 <body>
-    <div class="navbar">
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Project</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+<div class="bar"></div>
+<div class="wrap">
+  <nav>
+    <b>Zidan</b>
+    <ul>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#karya">Karya</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+      <li><button id="theme" aria-label="Ganti tema terang atau gelap">◐</button></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1 class="name" aria-label="Zidan">
+      <span class="lc" aria-hidden="true">Zidan</span>
+      <span class="lm" aria-hidden="true">Zidan</span>
+      <span class="ly" aria-hidden="true">Zidan</span>
+      <span class="base">Zidan</span>
+    </h1>
+    <p class="tag">Desainer grafis. Bikin visual yang jelas dibaca dan gampang diingat.</p>
+    <p class="hint">Gerakin kursor ke atas nama. Klik namanya buat nyatuin warnanya.</p>
+    <div class="btns">
+      <a class="btn fill" href="#karya">Lihat karya</a>
+      <a class="btn" href="#kontak">Ajak kerja bareng</a>
     </div>
-    <div class="container">
-        <div class="headline">
-            <p class="role">Graphic Designer | UI/UX Designer</p>
-            <h1>Muhammad <span style="color: rgb(0, 202, 78)">Zidane</span></h1>
-            <p class="ket">I'm passionate about crafting experiences that are engaging, accessible, and user-centric.</p>
-            <a href="https://wa.me/6285770330546" target="_blank" class="first-btn">Contact Me!</a>
-        </div>
-        <div class="profile">
-            <img src="assets/profile-pic.png" width="450" alt="hero">
-        </div>
-    </div>
-    <div class="experience">
-        <div class="left-text">
-            <h2>A Long Journey</h2>
-            <p>I Learn in a World Design when i was 21 in <span style="font-weight: 700;">May 2021</span></p>
-        </div>
-        <div class="first-left">
-            <div class="years">
-                <img src="assets/calendar.png" alt="years" width="75">
-                <h3>3+ Years</h3>
-                <p>i've been on design in 3 years</p>
-            </div>
-            <div class="project">
-                <img src="assets/document.png" alt="project" width="75">
-                <h3>+50 Projects</h3>
-                <p>i've been doing a lot of projects</p>
-            </div>
-        </div>
-        <div class="second-right">
-            <div class="client">
-                <img src="assets/users.png" alt="client" width="75">
-                <h3>50+ Clients</h3>
-                <p>i give a lot of solution for client with my design</p>
-            </div>
-        </div>
-    </div>
+  </header>
+</div>
+
+<div class="marquee" aria-hidden="true"><div class="mq"><div class="g"><span><i style="background:var(--c)"></i>Identitas visual</span><span><i style="background:var(--m)"></i>Konten media sosial</span><span><i style="background:var(--y)"></i>Poster</span><span><i style="background:var(--ink)"></i>Katalog produk</span></div><div class="g"><span><i style="background:var(--c)"></i>Identitas visual</span><span><i style="background:var(--m)"></i>Konten media sosial</span><span><i style="background:var(--y)"></i>Poster</span><span><i style="background:var(--ink)"></i>Katalog produk</span></div></div></div>
+
+<section id="layanan"><div class="wrap">
+  <h2>Yang bisa gua kerjain</h2>
+  <div class="services">
+    <div><h3>Identitas visual</h3><p>Logo, palet, tipografi, dan panduan pemakaiannya.</p></div>
+    <div><h3>Konten media sosial</h3><p>Feed, carousel, dan story yang konsisten dengan brand.</p></div>
+    <div><h3>Poster dan cetak</h3><p>Poster, banner, brosur, dan katalog siap cetak.</p></div>
+    <div><h3>Katalog produk</h3><p>Layout produk untuk marketplace dan promosi.</p></div>
+  </div>
+</div></section>
+
+<section id="karya"><div class="wrap">
+  <h2>Karya pilihan</h2>
+  <div class="chips" id="chips" role="group" aria-label="Filter kategori"></div>
+  <div class="work">
+    <figure class="tile"><div class="ph">Taruh gambar proyek di sini</div><figcaption><b>Judul proyek</b><small>Identitas visual</small></figcaption></figure>
+    <figure class="tile"><div class="ph">Taruh gambar proyek di sini</div><figcaption><b>Judul proyek</b><small>Konten media sosial</small></figcaption></figure>
+    <figure class="tile"><div class="ph">Taruh gambar proyek di sini</div><figcaption><b>Judul proyek</b><small>Poster</small></figcaption></figure>
+    <figure class="tile"><div class="ph">Taruh gambar proyek di sini</div><figcaption><b>Judul proyek</b><small>Logo</small></figcaption></figure>
+    <figure class="tile"><div class="ph">Taruh gambar proyek di sini</div><figcaption><b>Judul proyek</b><small>Katalog produk</small></figcaption></figure>
+    <figure class="tile"><div class="ph">Taruh gambar proyek di sini</div><figcaption><b>Judul proyek</b><small>Carousel</small></figcaption></figure>
+  </div>
+</div></section>
+
+<section id="tentang"><div class="wrap">
+  <h2>Tentang</h2>
+  <div class="about">
+    <p>Gua Zidan, desainer grafis yang ngerjain brand dan konten untuk berbagai klien lewat agensi desain sendiri. Sehari-hari gua juga ngajar Desain Komunikasi Visual di SMK, jadi gua terbiasa jelasin keputusan desain dengan bahasa yang gampang dipahami.</p>
+    <p>Buat gua, desain yang bagus itu yang pesannya sampai dalam hitungan detik.</p>
+  </div>
+</div></section>
+
+<section id="kontak" class="contact"><div class="wrap">
+  <h2>Punya proyek? Kita ngobrol.</h2>
+  <div class="links">
+    <a class="btn fill" id="mail" href="mailto:halo@contoh.com">halo@contoh.com</a>
+    <a class="btn" href="https://wa.me/620000000000">WhatsApp</a>
+    <a class="btn" href="https://instagram.com/usernamegua">Instagram</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Zidan, desainer grafis.</div></footer>
+<dialog id="dlg" aria-label="Detail karya"><div class="ph" id="dlg-ph">Gambar proyek tampil di sini</div><div class="dlg-t"><b id="dlg-t"></b><small id="dlg-c"></small><button class="btn" id="dlg-x">Tutup</button></div></dialog>
+<div class="toast" role="status"></div>
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const name=$('.name'),bar=$('.bar');
+const prog=()=>{const m=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(m>0?scrollY/m:0)+')'};
+addEventListener('scroll',prog,{passive:true});prog();
+if(!rm)addEventListener('pointermove',e=>{name.style.setProperty('--px',(e.clientX/innerWidth*2-1).toFixed(3));name.style.setProperty('--py',(e.clientY/innerHeight*2-1).toFixed(3))});
+name.addEventListener('click',()=>name.classList.toggle('lock'));
+$('#theme').addEventListener('click',()=>{const r=document.documentElement;const cur=r.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');r.dataset.theme=cur==='dark'?'light':'dark'});
+const targets=$$('section h2,.services>div,.about p,.tile,.links,.chips');
+if(!rm&&'IntersectionObserver' in window){
+  targets.forEach(el=>{el.classList.add('rv');el.style.transitionDelay=([...el.parentNode.children].indexOf(el)%6)*80+'ms'});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target;el.classList.add('in');io.unobserve(el);setTimeout(()=>{el.classList.remove('rv','in');el.style.transitionDelay=''},1300)}}),{threshold:.15});
+  targets.forEach(el=>io.observe(el));
+}
+const tiles=$$('.tile'),lab=t=>t.querySelector('small').textContent;
+const cats=['Semua',...new Set(tiles.map(lab))];
+cats.forEach((c,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=c;b.setAttribute('aria-pressed',i===0);b.onclick=()=>{$$('.chip').forEach(x=>x.setAttribute('aria-pressed',x===b));tiles.forEach(t=>{const ok=c==='Semua'||lab(t)===c;t.classList.toggle('off',!ok);if(ok){t.classList.remove('pop');void t.offsetWidth;t.classList.add('pop')}})};$('#chips').appendChild(b)});
+const dlg=$('#dlg');
+tiles.forEach(t=>{
+  t.tabIndex=0;t.setAttribute('role','button');
+  if(!rm){t.addEventListener('pointermove',e=>{const r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;t.style.transform='perspective(700px) rotateY('+x*8+'deg) rotateX('+(-y*8)+'deg) translateY(-4px)'});t.addEventListener('pointerleave',()=>{t.style.transform=''})}
+  const open=()=>{const cs=getComputedStyle(t.querySelector('.ph')),box=$('#dlg-ph');box.style.background=cs.backgroundColor;box.style.color=cs.color;$('#dlg-t').textContent=t.querySelector('b').textContent;$('#dlg-c').textContent=lab(t);dlg.showModal()};
+  t.addEventListener('click',open);
+  t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
+});
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+$('#dlg-x').onclick=()=>dlg.close();
+const toast=$('.toast');let tt;
+const say=m=>{toast.textContent=m;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('show'),2000)};
+$('#mail').addEventListener('click',e=>{e.preventDefault();const t='halo@contoh.com';(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>say('Email tersalin'),()=>{location.href='mailto:'+t})});
+})();
+</script>
 </body>
 </html>
